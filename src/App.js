@@ -1,6 +1,7 @@
 import './App.css';
 import {useEffect, useState} from "react";
 import axios from "axios";
+import Header  from "./components/Header"
 
 function App() {
   const CLIENT_ID = "d7da2bf996ca42cc8d58e8227ac1068b"
@@ -55,7 +56,7 @@ function App() {
 
   const renderArtists = () => {
     return artists.map(artist => (
-      <div key={artist.id}>
+      <div className='search-artist-container' key={artist.id}>
         {artist.images.length ? <img width={"100%"} src={artist.images[0].url} alt =""/> : <div>No Image</div>}
         {artist.name}
       </div>
@@ -64,6 +65,7 @@ function App() {
   
   return (
     <div className="App">
+        <Header/>
         <h1>Spotify React App</h1>
         {!token ?
         <a href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}>Login to Spotify</a>

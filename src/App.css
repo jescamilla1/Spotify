@@ -1,0 +1,22 @@
+.App {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.page-header{
+    color:#191414
+}
+.search-artist-container{
+    width: 50%;
+    padding-top: 20px;
+    
+}
+.search-artist-container > img {
+    width: 100px;
+    height: 100px;
+}
+.spotify-font{
+    font-family: 'Gotham', sans-serif;
+}
