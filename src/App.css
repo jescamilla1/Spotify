@@ -20,3 +20,16 @@
 .spotify-font{
     font-family: 'Gotham', sans-serif;
 }
+.logo{
+    width: 350px;
+    height: 100px;
+}
+.header-container{
+    display: flex;
+}
+.header-container > h2{
+    margin: auto;
+    font-size: 45px;
+    padding-left: 15px;
+    color: #191414;
+}
