@@ -5,30 +5,34 @@ import axios from 'axios'
 
 
 function UserPlaylists() {
-  // const [userId, setUserId] = useState("")
+  const PLAYLISTS_ENDPOINT = "https://api.spotify.com/v1/me/playlists"
+  
+  const [token, setToken] = useState("")
+  const [data, setData] = useState({})
 
   useEffect(() => {
-    let token = window.localStorage.getItem("token")
-    console.log(token)
-
-    const getUserId = async () => {
-
-      const {response} = await axios.get("https://api.spotify.com/v1/me",{
-        headers: {
-          Authorization: `Bearer ${token}`
-        }
-      })
-      console.log(response.data)
-    }
-
-    getUserId()
-
+    setToken(window.localStorage.getItem("token"))
   })
 
+  const getPlaylists = async (e) => {
+    e.preventDefault()
+    const {data} = await axios.get("https://api.spotify.com/v1/me/playlists",{
+      headers:{
+        Authorization: `Bearer ${token}`
+      },
+    })
+
+    // console.log(data)
+    setData(data)
+
+  }
+
+
+  
   return (
     
-    <div>UserPlaylists
-
+    <div>
+      <button onClick={getPlaylists}>Get Playlists</button>
     </div>						
   )
   
