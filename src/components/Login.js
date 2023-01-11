@@ -66,8 +66,8 @@ function Login() {
   return (
     <div>
          {!token ?
-        <a href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}>Login to Spotify</a>
-          : <button onClick={logout}>Logout</button> 
+        <button className='spotify-login-button'><a href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}>Login to Spotify</a></button>
+          : <button className='spotify-login-button' onClick={logout}>Logout</button> 
         }
         {/* {console.log(token)} */}
         {token ?

@@ -33,3 +33,21 @@
     padding-left: 15px;
     color: #191414;
 }
+.spotify-login-button{
+    font-family: "Helvetica", sans-serif;
+    border-radius: 10px;
+    border: none;
+    color: #000;
+    font-size: 15px;
+    background-color: #1ED760;
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-weight: bold;
+
+}
+.spotify-login-button > a {
+    text-decoration: none;
+    color: #000;
+    font-family: "Helvetica", sans-serif;
+}
