@@ -1,10 +1,17 @@
 import React from 'react'
+import {useState} from "react"
+import axios from "axios"
 
 function SearchArtist() {
+    //TODO: add the oneffect to grab the token for search
+    //TODO: add the dotenv .env file to hold my keys and stuff 
     const [searchKey, setSearchKey] = useState("")
     const [artists, setArtists] = useState([])
+    const [token, setToken] = useState("")
+
     
     const searchArtists = async (e) => {
+        setToken(window.localStorage.getItem("token"))
         e.preventDefault()
         const {data} = await axios.get("https://api.spotify.com/v1/search",{
             headers:{
@@ -32,7 +39,14 @@ function SearchArtist() {
       
       
   return (
-    <div>SearchArtist</div>
+    <div>
+      <form onSubmit={searchArtists}>
+        <input type="text" onChange={e => setSearchKey(e.target.value)}/>
+        <button type={"submit"}>Search</button>
+      </form>
+      {renderArtists()}
+    </div>
+
   )
 }
 
