@@ -27,12 +27,13 @@ function UserPlaylists() {
 
   }
 
-
   
   return (
     
     <div>
       <button onClick={getPlaylists}>Get Playlists</button>
+      {data?.items ? data.items.map((item)=> <p>{item.name}</p>): null}
+
     </div>						
   )
   
