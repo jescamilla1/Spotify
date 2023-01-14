@@ -26,7 +26,6 @@ function Login() {
       setToken(token)
   
       console.log("from login"+ token)
-      console.log(process.env)
 
   
     },[])
@@ -43,11 +42,11 @@ function Login() {
         <button className='spotify-login-button'><a href={`${AUTH_ENDPOINT}?client_id=${process.env.REACT_APP_CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}>Login to Spotify</a></button>
           : <button className='spotify-login-button' onClick={logout}>Logout</button> 
         }
-        {token ?
+        {/* {token ?
 
           <SearchArtist/>
           : <h2>Please Login</h2>
-        }    
+        }     */}
     </div>
   )
 }

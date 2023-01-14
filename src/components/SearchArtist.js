@@ -4,16 +4,17 @@ import axios from "axios"
 
 function SearchArtist() {
     //TODO: add the oneffect to grab the token for search
-    //TODO: add the dotenv .env file to hold my keys and stuff 
     const [searchKey, setSearchKey] = useState("")
     const [artists, setArtists] = useState([])
     const [token, setToken] = useState("")
+
+    const SEARCH_ENDPOINT = "https://api.spotify.com/v1/search"
 
     
     const searchArtists = async (e) => {
         setToken(window.localStorage.getItem("token"))
         e.preventDefault()
-        const {data} = await axios.get("https://api.spotify.com/v1/search",{
+        const {data} = await axios.get( SEARCH_ENDPOINT,{
             headers:{
             Authorization: `Bearer ${token}`
             },
@@ -31,8 +32,8 @@ function SearchArtist() {
     const renderArtists = () => {
     return artists.map(artist => (
         <div className='search-artist-container' key={artist.id}>
-        {artist.images.length ? <img width={"100%"} src={artist.images[0].url} alt =""/> : <div>No Image</div>}
-        {artist.name}
+        {artist.images.length ? <img className="search-artist-image" width={"100%"} src={artist.images[0].url} alt =""/> : <div>No Image</div>}
+        <div className='search-artist-name'>{artist.name}</div>
         </div>
         ))
     }

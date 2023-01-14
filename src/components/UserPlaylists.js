@@ -16,13 +16,13 @@ function UserPlaylists() {
 
   const getPlaylists = async (e) => {
     e.preventDefault()
-    const {data} = await axios.get("https://api.spotify.com/v1/me/playlists",{
+    const {data} = await axios.get(PLAYLISTS_ENDPOINT,{
       headers:{
         Authorization: `Bearer ${token}`
       },
     })
 
-    // console.log(data)
+    console.log(data)
     setData(data)
 
   }
