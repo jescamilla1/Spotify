@@ -27,6 +27,8 @@ function Login() {
       setToken(token)
   
       console.log("from login"+ token)
+      console.log(process.env)
+
   
     },[])
   

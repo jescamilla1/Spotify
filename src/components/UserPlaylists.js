@@ -12,7 +12,7 @@ function UserPlaylists() {
 
   useEffect(() => {
     setToken(window.localStorage.getItem("token"))
-  })
+  },[])
 
   const getPlaylists = async (e) => {
     e.preventDefault()
