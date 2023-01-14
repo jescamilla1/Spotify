@@ -3,7 +3,6 @@ import {useEffect, useState} from "react";
 import SearchArtist from './SearchArtist';
 
 function Login() {
-    const CLIENT_ID = "d7da2bf996ca42cc8d58e8227ac1068b"
     const REDIRECT_URI = "http://localhost:3000"
     const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize"
     const RESPONSE_TYPE = "token"
@@ -41,7 +40,7 @@ function Login() {
   return (
     <div>
          {!token ?
-        <button className='spotify-login-button'><a href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}>Login to Spotify</a></button>
+        <button className='spotify-login-button'><a href={`${AUTH_ENDPOINT}?client_id=${process.env.REACT_APP_CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}>Login to Spotify</a></button>
           : <button className='spotify-login-button' onClick={logout}>Logout</button> 
         }
         {token ?
