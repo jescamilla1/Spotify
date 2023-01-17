@@ -21,7 +21,6 @@ function UserPlaylists() {
         Authorization: `Bearer ${token}`
       },
     })
-
     console.log(data)
     setData(data)
 
@@ -33,7 +32,6 @@ function UserPlaylists() {
     <div>
       <button onClick={getPlaylists}>Get Playlists</button>
       {data?.items ? data.items.map((item)=> <p>{item.name}</p>): null}
-
     </div>						
   )
   

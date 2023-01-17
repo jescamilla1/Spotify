@@ -4,6 +4,7 @@ import './App.css';
 import Header  from "./components/Header"
 import UserPlaylists from './components/UserPlaylists';
 import Login from './components/Login';
+import PlaylistTracks from './components/PlaylistTracks';
 
 function App() {  
   return (
@@ -11,6 +12,7 @@ function App() {
         <Header/>
         {/* <Login/> */}
         <UserPlaylists/>
+        <PlaylistTracks/>
     </div>
   );
 }
