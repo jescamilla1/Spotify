@@ -1,7 +1,7 @@
 import React from 'react'
 import {useState, useEffect} from 'react'
 import axios from 'axios'
-function PlaylistTracks() {
+function PlaylistTracks() { // add props to get each playlist
   const [token, setToken] = useState("")
   const [tracks, setTracks] = useState({})
 
