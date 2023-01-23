@@ -2,8 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.cdnfonts.com/css/gotham');
+
 @layer components{
+    .App{
+        @apply flex flex-col bg-[#191414] h-screen text-white font-['Gotham_Black']
+    }
     .header-container{
-        @apply py-2 px-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75;
+        @apply flex items-center gap-x-3 justify-center
+    }
+    .spotify-font{
+        @apply text-7xl tracking-tight text-center
+    }
+    .logo{
+        @apply object-contain h-28 w-24
+    }
+    .spotify-button{
+        @apply bg-[#1db954] hover:bg-[#15843c] py-2 px-4 rounded-full ml-8 text-sm
     }
 }
