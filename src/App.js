@@ -10,6 +10,7 @@ function App() {
   return (
     <div className="App">
         <Header/>
+        <div className='secondary-color'></div>
         {/* <Login/> */}
         <UserPlaylists/>
         <PlaylistTracks/>
