@@ -24,21 +24,21 @@
         @apply w-64 
     }
     .playlist-list-container{
-        @apply px-3 py-4 overflow-y-auto rounded bg-[#2a2a2a] dark:bg-[#2a2a2a]
+        @apply px-3 py-4 overflow-y-auto rounded bg-[#2a2a2a] dark:bg-[#2a2a2a] align-middle
     }
     .playlist-list-items{
         @apply space-y-2
     }
     .secondary-color{
-        @apply flex flex-row bg-[#2a2a2a] h-64 w-3/4 
+        @apply flex flex-row bg-red-500 h-1/2 w-3/4 text-white
     }
     .left-box{
-        @apply  h-64 bg-white w-64 mr-8 text-black
+        @apply  h-full bg-[#2a2a2a] w-64 mr-8 rounded-lg 
     }
     .center-box{
-        @apply w-1/2 h-64 bg-blue-400
+        @apply w-1/2 h-64 bg-blue-400 rounded-lg
     }
     .right-box{
-        @apply h-64 bg-white w-64 ml-8 
+        @apply h-64 bg-[#2a2a2a] w-64 ml-8 rounded-lg
     }
 }

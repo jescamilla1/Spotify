@@ -39,7 +39,7 @@ function Login() {
   return (
     <div>
          {!token ?
-        <button className='spotify-button '><a href={`${AUTH_ENDPOINT}?client_id=${process.env.REACT_APP_CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}>Login to Spotify</a></button>
+        <button className='spotify-button '><a href={`${AUTH_ENDPOINT}?client_id=${process.env.REACT_APP_CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}>Login</a></button>
           : <button className='spotify-button' onClick={logout}>Logout</button> 
         }
         {/* {token ?
