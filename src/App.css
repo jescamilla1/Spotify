@@ -6,7 +6,7 @@
 
 @layer components{
     .App{
-        @apply flex flex-col bg-[#191414] h-screen text-white font-['Gotham_Black']
+        @apply flex flex-col bg-[#191414] h-screen text-white font-['Gotham_Black'] items-center
     }
     .header-container{
         @apply flex items-center gap-x-3 justify-center pb-11 pt-5
@@ -20,7 +20,25 @@
     .spotify-button{
         @apply bg-[#1db954] hover:bg-[#15843c] py-2 px-4 rounded-full ml-8 text-sm
     }
+    .playlist-container{
+        @apply w-64 
+    }
+    .playlist-list-container{
+        @apply px-3 py-4 overflow-y-auto rounded bg-[#2a2a2a] dark:bg-[#2a2a2a]
+    }
+    .playlist-list-items{
+        @apply space-y-2
+    }
     .secondary-color{
-        @apply bg-[#2a2a2a] h-64 w-1/2
+        @apply flex flex-row bg-[#2a2a2a] h-64 w-3/4 
+    }
+    .left-box{
+        @apply  h-64 bg-white w-64 mr-8 text-black
+    }
+    .center-box{
+        @apply w-1/2 h-64 bg-blue-400
+    }
+    .right-box{
+        @apply h-64 bg-white w-64 ml-8 
     }
 }
