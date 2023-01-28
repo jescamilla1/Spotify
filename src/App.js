@@ -11,11 +11,13 @@ function App() {
     <div className="App">
         <Header/>
         <div className='secondary-color'>
-          <div className='left-box'><p className='text-center'>Playlist</p></div>
+          <div className='left-box'>
+            <p className='text-center'>Playlist</p>
+            <UserPlaylists/>
+          </div>
           <div className='center-box'></div>
           <div className='right-box'></div>
         </div>
-          <UserPlaylists/>
           <PlaylistTracks/>
         {/* <Login/> */}
 

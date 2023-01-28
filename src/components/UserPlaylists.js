@@ -11,21 +11,22 @@ function UserPlaylists() {
   const [data, setData] = useState({})
 
 
-  const getPlaylists = async (e) => {
-    e.preventDefault()
-    const {data} = await axios.get(PLAYLISTS_ENDPOINT,{
-      headers:{
-        Authorization: `Bearer ${token}`
-      },
-    })
-    console.log(data)
-    setData(data)
-  }
+
 
   useEffect(() => {
+    const getPlaylists = async () => {
+      const {data} = await axios.get(PLAYLISTS_ENDPOINT,{
+        headers:{
+          Authorization: `Bearer ${token}`
+        },
+      })
+      console.log(data)
+      setData(data)
+    }
+
     setToken(window.localStorage.getItem("token"))
     getPlaylists();
-  },[])
+  },[token])
 // error too many requests, might have to make just one 
 // maybe use multiple useeffects
 
