@@ -33,12 +33,16 @@
         @apply flex flex-row bg-red-500 h-1/2 w-3/4 text-white
     }
     .left-box{
-        @apply  h-full bg-[#2a2a2a] w-64 mr-8 rounded-lg 
+        @apply  h-full bg-[#2a2a2a] w-64 mr-8 rounded-lg flex flex-col overflow-hidden
     }
     .center-box{
         @apply w-1/2 h-64 bg-blue-400 rounded-lg
     }
     .right-box{
         @apply h-64 bg-[#2a2a2a] w-64 ml-8 rounded-lg
+    }
+
+    .playlist-list{
+        @apply inline-block border  rounded hover:bg-[#2a2a2a] text-white  py-1 px-3
     }
 }

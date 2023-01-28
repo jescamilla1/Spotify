@@ -1,7 +1,8 @@
 import React from 'react'
 import {useState, useEffect} from 'react'
 import axios from 'axios'
-function PlaylistTracks() { // add props to get each playlist
+function PlaylistTracks() { 
+  // add props to get each playlist
   const [token, setToken] = useState("")
   const [tracks, setTracks] = useState({})
 
@@ -11,23 +12,22 @@ function PlaylistTracks() { // add props to get each playlist
   console.log(TRACKS_ENDPOINT)
 
   useEffect(()=>{
+    const getTracks = async() =>{
+      const {data} = await axios.get(TRACKS_ENDPOINT,{
+        headers:{
+          Authorization: `Bearer ${token}`
+        },
+      })
+      setTracks(data)
+    }
+
     setToken(window.localStorage.getItem("token"))
-  },[])
+    getTracks()
+  },[token])
   
-  const getTracks = async(e) =>{
-    e.preventDefault()
-    const {data} = await axios.get(TRACKS_ENDPOINT,{
-      headers:{
-        Authorization: `Bearer ${token}`
-      },
-    })
-    console.log(data)
-    setTracks(data)
-  }
     
   return (
     <div>
-      <button onClick={getTracks}>Get Tracks</button>
       {tracks?.items ? tracks.items.map((item)=> <p key = {item}>{item.track.name}</p>): null}
     </div>
   )

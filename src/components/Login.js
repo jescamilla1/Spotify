@@ -1,12 +1,12 @@
 import React from 'react'
 import {useEffect, useState} from "react";
-import SearchArtist from './SearchArtist';
 
 function Login() {
+    // used for axios request
     const REDIRECT_URI = "http://localhost:3000"
     const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize"
     const RESPONSE_TYPE = "token"
-  
+
     const [token, setToken] = useState("")
 
   
@@ -24,10 +24,6 @@ function Login() {
         
       }
       setToken(token)
-  
-      console.log("from login"+ token)
-
-  
     },[])
   
     const logout = () => {
@@ -35,18 +31,12 @@ function Login() {
       window.localStorage.removeItem("token")
     }
   
-    
   return (
     <div>
-         {!token ?
+        {!token ?
         <button className='spotify-button '><a href={`${AUTH_ENDPOINT}?client_id=${process.env.REACT_APP_CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}>Login</a></button>
           : <button className='spotify-button' onClick={logout}>Logout</button> 
         }
-        {/* {token ?
-
-          <SearchArtist/>
-          : <h2>Please Login</h2>
-        }     */}
     </div>
   )
 }

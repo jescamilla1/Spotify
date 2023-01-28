@@ -10,9 +10,6 @@ function UserPlaylists() {
   const [token, setToken] = useState("")
   const [data, setData] = useState({})
 
-
-
-
   useEffect(() => {
     const getPlaylists = async () => {
       const {data} = await axios.get(PLAYLISTS_ENDPOINT,{
@@ -26,6 +23,7 @@ function UserPlaylists() {
 
     setToken(window.localStorage.getItem("token"))
     getPlaylists();
+
   },[token])
 // error too many requests, might have to make just one 
 // maybe use multiple useeffects
@@ -34,8 +32,10 @@ function UserPlaylists() {
   
   return (
     
-    <div>
-        {data?.items ? data.items.map((item)=> <li>{item.name}</li>): null}
+    <div className='playlist-list-container'>
+      <ul className='flex flex-col'>
+        {data?.items ? data.items.map((item)=> <li className='inline-block border border-white rounded hover:border-gray-200 text-blue-500 hover:bg-gray-200 py-1 px-3'>{item.name}</li>): null}
+      </ul>
     </div>					
   )
   

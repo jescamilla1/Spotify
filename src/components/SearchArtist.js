@@ -23,17 +23,17 @@ function SearchArtist() {
             type: "artist"
             }
         })
-
         // console.log(data)
         setArtists(data.artists.items)
-
     }
     
     const renderArtists = () => {
     return artists.map(artist => (
         <div className='search-artist-container' key={artist.id}>
-        {artist.images.length ? <img className="search-artist-image" width={"100%"} src={artist.images[0].url} alt =""/> : <div>No Image</div>}
-        <div className='search-artist-name'>{artist.name}</div>
+          {artist.images.length ? <img className="search-artist-image" width={"100%"} src={artist.images[0].url} alt =""/> : <div>No Image</div>}
+          <div className='search-artist-name'>
+            {artist.name}
+          </div>
         </div>
         ))
     }

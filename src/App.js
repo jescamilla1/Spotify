@@ -15,10 +15,13 @@ function App() {
             <p className='text-center'>Playlist</p>
             <UserPlaylists/>
           </div>
-          <div className='center-box'></div>
-          <div className='right-box'></div>
+          <div className='center-box'>
+           <PlaylistTracks/>
+          </div>
+          <div className='right-box'>
+            <UserPlaylists/>
+          </div>
         </div>
-          <PlaylistTracks/>
         {/* <Login/> */}
 
     </div>
