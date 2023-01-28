@@ -32,9 +32,9 @@ function UserPlaylists() {
   
   return (
     
-    <div className='playlist-list-container'>
+    <div className='playlist-list-container '>
       <ul className='flex flex-col'>
-        {data?.items ? data.items.map((item)=> <li className='inline-block border border-white rounded hover:border-gray-200 text-blue-500 hover:bg-gray-200 py-1 px-3'>{item.name}</li>): null}
+        {data?.items ? data.items.map((item)=> <li className='playlist-list'><span className='mt-3'>{item.name}</span></li>): null}
       </ul>
     </div>					
   )

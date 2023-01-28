@@ -28,7 +28,7 @@ function PlaylistTracks() {
     
   return (
     <div>
-      {tracks?.items ? tracks.items.map((item)=> <p key = {item}>{item.track.name}</p>): null}
+      {tracks?.items ? tracks.items.map((item)=> <li className='playlist-list' key = {item}>{item.track.name}</li>): null}
     </div>
   )
 }

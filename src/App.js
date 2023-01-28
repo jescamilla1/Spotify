@@ -10,15 +10,14 @@ function App() {
   return (
     <div className="App">
         <Header/>
-        <div className='secondary-color'>
-          <div className='left-box'>
-            <p className='text-center'>Playlist</p>
+        <div className='playlist-editor-container'>
+          <div className='left-playlist-container'>
             <UserPlaylists/>
           </div>
-          <div className='center-box'>
+          <div className='tracks-container'>
            <PlaylistTracks/>
           </div>
-          <div className='right-box'>
+          <div className='right-playlist-container'>
             <UserPlaylists/>
           </div>
         </div>

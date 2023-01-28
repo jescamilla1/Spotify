@@ -4,6 +4,8 @@
 
 @import url('https://fonts.cdnfonts.com/css/gotham');
 
+
+
 @layer components{
     .App{
         @apply flex flex-col bg-[#191414] h-screen text-white font-['Gotham_Black'] items-center
@@ -24,25 +26,25 @@
         @apply w-64 
     }
     .playlist-list-container{
-        @apply px-3 py-4 overflow-y-auto rounded bg-[#2a2a2a] dark:bg-[#2a2a2a] align-middle
+        @apply overflow-y-auto rounded bg-[#2a2a2a] dark:bg-[#2a2a2a] align-middle
     }
     .playlist-list-items{
         @apply space-y-2
     }
-    .secondary-color{
-        @apply flex flex-row bg-red-500 h-1/2 w-3/4 text-white
+    .playlist-editor-container{
+        @apply flex flex-row bg-[#1db954] h-1/2 w-3/4 text-white rounded-lg
     }
-    .left-box{
+    .left-playlist-container{
         @apply  h-full bg-[#2a2a2a] w-64 mr-8 rounded-lg flex flex-col overflow-hidden
     }
-    .center-box{
-        @apply w-1/2 h-64 bg-blue-400 rounded-lg
+    .tracks-container{
+        @apply w-1/2 bg-[#2a2a2a] rounded-lg h-full
     }
-    .right-box{
-        @apply h-64 bg-[#2a2a2a] w-64 ml-8 rounded-lg
+    .right-playlist-container{
+        @apply h-full bg-[#2a2a2a] w-64 ml-8 rounded-lg
     }
 
     .playlist-list{
-        @apply inline-block border  rounded hover:bg-[#2a2a2a] text-white  py-1 px-3
+        @apply flex border border-none rounded  text-white font-['Gotham'] font-medium hover:bg-[#1db954] py-1 px-4 active:bg-violet-700 
     }
 }
