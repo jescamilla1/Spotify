@@ -32,7 +32,7 @@ function PlaylistTracks() {
 
       
       {tracks?.items ? tracks.items.map((item)=>
-        <li className='playlist-list' key = {item.track.name}><img className='w-5 h-full' src={item.track.album.images[0].url}></img>{item.track.name}</li>
+        <li className='playlist-list' key = {item.track.name}><img className='w-9 h-full' src={item.track.album.images[0].url}></img>{item.track.name}</li>
       
       ): null}
     </div>

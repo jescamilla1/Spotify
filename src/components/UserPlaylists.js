@@ -34,7 +34,7 @@ function UserPlaylists() {
     
     <div className='playlist-list-container '>
       <ul className='flex flex-col'>
-        {data?.items ? data.items.map((item)=> <li className='playlist-list'><img className='h-full w-4' src={item.images[0].url}></img><span className='mt-3'>{item.name}</span></li>): null}
+        {data?.items ? data.items.map((item)=> <li className='playlist-list'><img className='h-full w-9' src={item.images[0].url}></img><span className='mt-3'>{item.name}</span></li>): null}
       </ul>
     </div>					
   )
