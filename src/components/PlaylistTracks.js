@@ -6,7 +6,7 @@ function PlaylistTracks() {
   const [token, setToken] = useState("")
   const [tracks, setTracks] = useState({})
 
-  
+  // TODO: split the useffect into one that gets the token and has a token parameter adnd another that constantly checks
 
 
   useEffect(()=>{
@@ -29,7 +29,7 @@ function PlaylistTracks() {
   
     
   return (
-    <div>
+    <div className='overflow-auto max-h-screen'>
       {tracks?.items ? tracks.items.map((item)=>
         <li className='playlist-list' key = {item.track.name}><img className='w-9 h-full' src={item.track.album.images[0].url}></img><span className='my-auto'>{item.track.name}</span></li>
       ): null}

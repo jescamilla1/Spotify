@@ -8,10 +8,10 @@
 
 @layer components{
     .App{
-        @apply flex flex-col bg-[#191414] h-screen text-white font-['Gotham_Black'] items-center
+        @apply flex flex-col bg-[#191414] h-fit text-white font-['Gotham_Black'] items-center
     }
     .header-container{
-        @apply flex items-center gap-x-3 justify-center pb-11 pt-5 min-w-max
+        @apply flex items-center gap-x-3 justify-center pb-11 pt-5 min-w-max h-fit
     }
     .spotify-font{
         @apply text-7xl tracking-tight text-center
@@ -32,16 +32,16 @@
         @apply space-y-2
     }
     .playlist-editor-container{
-        @apply flex flex-row bg-[#1db954] h-1/2 w-1/2 text-white min-w-fit
+        @apply flex flex-row bg-[#1db954] h-1/2 max-h-96 w-1/2 text-white min-w-fit
     }
     .left-playlist-container{
-        @apply  h-full bg-[#2a2a2a] w-64 ml-0 
+        @apply  h-screen bg-[#2a2a2a] w-64 ml-0 
     }
     .tracks-container{
         @apply w-auto bg-[#2a2a2a]  h-full m-auto 
     }
     .right-playlist-container{
-        @apply h-full bg-[#2a2a2a] w-64 mr-0 
+        @apply h-screen bg-[#2a2a2a] w-64 mr-0 
     }
 
     .playlist-list{

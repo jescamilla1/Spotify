@@ -33,9 +33,9 @@ function UserPlaylists() {
   
   return (
     
-    <div className='playlist-list-container '>
+    <div className='playlist-list-container overflow-auto'>
       <ul className='flex flex-col'>
-        {data?.items ? data.items.map((item)=> <li onClick={() => {setActiveId(item.id); window.localStorage.setItem("playlist_id", item.id)}} className={`playlist-list ${item.id === activeId ? 'bg-violet-700':null}`  } key={item.id} ><img className='playlist-album-img' src={item.images[0].url}></img><span className='my-auto'>{item.name}</span></li>): null}
+        {data?.items ? data.items.map((item)=> <li onClick={() => {setActiveId(item.id); window.localStorage.setItem("playlist_id", item.id)}} className={`playlist-list ${item.id === activeId ? 'bg-[#1db954]':null}`  } key={item.id} ><img className='playlist-album-img' src={item.images[0].url}></img><span className='my-auto'>{item.name}</span></li>): null}
       </ul>
     </div>					
   )
