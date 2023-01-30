@@ -11,7 +11,7 @@
         @apply flex flex-col bg-[#191414] h-screen text-white font-['Gotham_Black'] items-center
     }
     .header-container{
-        @apply flex items-center gap-x-3 justify-center pb-11 pt-5
+        @apply flex items-center gap-x-3 justify-center pb-11 pt-5 min-w-max
     }
     .spotify-font{
         @apply text-7xl tracking-tight text-center
@@ -26,25 +26,28 @@
         @apply w-64 
     }
     .playlist-list-container{
-        @apply overflow-y-auto rounded bg-[#2a2a2a] dark:bg-[#2a2a2a] align-middle
+        @apply overflow-y-auto   align-middle
     }
     .playlist-list-items{
         @apply space-y-2
     }
     .playlist-editor-container{
-        @apply flex flex-row bg-[#1db954] h-1/2 w-3/4 text-white rounded-lg
+        @apply flex flex-row bg-[#1db954] h-1/2 w-1/2 text-white min-w-fit
     }
     .left-playlist-container{
-        @apply  h-full bg-[#2a2a2a] w-64 mr-8 rounded-lg flex flex-col overflow-hidden
+        @apply  h-full bg-[#2a2a2a] w-64 ml-0 
     }
     .tracks-container{
-        @apply w-1/2 bg-[#2a2a2a] rounded-lg h-full
+        @apply w-auto bg-[#2a2a2a]  h-full m-auto 
     }
     .right-playlist-container{
-        @apply h-full bg-[#2a2a2a] w-64 ml-8 rounded-lg
+        @apply h-full bg-[#2a2a2a] w-64 mr-0 
     }
 
     .playlist-list{
-        @apply flex border border-none rounded  text-white font-['Gotham'] font-medium hover:bg-[#1db954] py-1 px-4 active:bg-violet-700 
+        @apply flex flex-row gap-4 border border-none   text-white font-['Gotham'] font-medium hover:bg-[#1db954] py-1 px-4 
+    }
+    .playlist-album-img{
+        @apply h-full w-10
     }
 }

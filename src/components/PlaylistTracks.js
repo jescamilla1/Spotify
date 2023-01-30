@@ -18,7 +18,7 @@ function PlaylistTracks() {
           Authorization: `Bearer ${token}`
         },
       })
-      console.log(data)
+      // console.log(data)
       setTracks(data)
     }
 
@@ -29,11 +29,8 @@ function PlaylistTracks() {
     
   return (
     <div>
-
-      
       {tracks?.items ? tracks.items.map((item)=>
-        <li className='playlist-list' key = {item.track.name}><img className='w-9 h-full' src={item.track.album.images[0].url}></img>{item.track.name}</li>
-      
+        <li className='playlist-list' key = {item.track.name}><img className='w-9 h-full' src={item.track.album.images[0].url}></img><span className='my-auto'>{item.track.name}</span></li>
       ): null}
     </div>
   )

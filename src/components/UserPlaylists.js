@@ -9,6 +9,7 @@ function UserPlaylists() {
   
   const [token, setToken] = useState("")
   const [data, setData] = useState({})
+  const [activeId, setActiveId] = useState('')
 
   useEffect(() => {
     const getPlaylists = async () => {
@@ -34,7 +35,7 @@ function UserPlaylists() {
     
     <div className='playlist-list-container '>
       <ul className='flex flex-col'>
-        {data?.items ? data.items.map((item)=> <li className='playlist-list'><img className='h-full w-9' src={item.images[0].url}></img><span className='mt-3'>{item.name}</span></li>): null}
+        {data?.items ? data.items.map((item)=> <li onClick={() => {setActiveId(item.id); console.log(item.id, activeId)}} className={`playlist-list ${item.id === activeId ? 'bg-violet-700':null}`  } key={item.id} ><img className='playlist-album-img' src={item.images[0].url}></img><span className='my-auto'>{item.name}</span></li>): null}
       </ul>
     </div>					
   )
