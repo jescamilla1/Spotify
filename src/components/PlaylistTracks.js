@@ -6,12 +6,13 @@ function PlaylistTracks() {
   const [token, setToken] = useState("")
   const [tracks, setTracks] = useState({})
 
-  const test_id = "0cFQ798107v4rScCoOMujI"
-  const TRACKS_ENDPOINT = "https://api.spotify.com/v1/playlists/" + test_id +"/tracks"
+  
 
-  console.log(TRACKS_ENDPOINT)
 
   useEffect(()=>{
+    const test_id = localStorage.getItem("playlist_id")
+    const TRACKS_ENDPOINT = "https://api.spotify.com/v1/playlists/" + test_id +"/tracks"
+
     const getTracks = async() =>{
       const {data} = await axios.get(TRACKS_ENDPOINT,{
         headers:{
@@ -24,7 +25,7 @@ function PlaylistTracks() {
 
     setToken(window.localStorage.getItem("token"))
     getTracks()
-  },[token])
+  })
   
     
   return (
