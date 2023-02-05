@@ -31,7 +31,7 @@ function PlaylistTracks() {
   return (
     <div className='overflow-auto max-h-screen'>
       {tracks?.items ? tracks.items.map((item)=>
-        <li className='playlist-list' key = {item.track.name}><img className='w-9 h-full' src={item.track.album.images[0].url}></img><span className='my-auto'>{item.track.name}</span></li>
+        <li draggable className='playlist-list' key = {item.track.name}><img className='w-9 h-full' src={item.track.album.images[0].url}></img><span className='my-auto'>{item.track.name}</span></li>
       ): null}
     </div>
   )
