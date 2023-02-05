@@ -12,12 +12,15 @@ function UserPlaylists() {
   const [activeId, setActiveId] = useState('')
 
   useEffect(() => {
+
     const getPlaylists = async () => {
+
       const {data} = await axios.get(PLAYLISTS_ENDPOINT,{
         headers:{
           Authorization: `Bearer ${token}`
         },
       })
+
       console.log(data)
       setData(data)
     }
@@ -25,7 +28,7 @@ function UserPlaylists() {
     setToken(window.localStorage.getItem("token"))
     getPlaylists();
 
-  },[token])
+  }, [token])
 // error too many requests, might have to make just one 
 // maybe use multiple useeffects
 
@@ -35,7 +38,21 @@ function UserPlaylists() {
     
     <div className='playlist-list-container overflow-auto'>
       <ul className='flex flex-col'>
-        {data?.items ? data.items.map((item)=> <li onClick={() => {setActiveId(item.id); window.localStorage.setItem("playlist_id", item.id)}} className={`playlist-list ${item.id === activeId ? 'bg-[#1db954]':null}`  } key={item.id} ><img className='playlist-album-img' src={item.images[0].url}></img><span className='my-auto'>{item.name}</span></li>): null}
+        {
+          data?.items?data.items.map((item)=> 
+            <li onClick={ () => {
+                  setActiveId(item.id); 
+                  window.localStorage.setItem("playlist_id", item.id)
+                }} 
+
+                className={ `playlist-list ${ item.id === activeId ? 'bg-[#1db954]' : null}`  } 
+                key={item.id} >
+                
+                <img className='playlist-album-img' src={item.images[0].url}></img>
+                <span className='my-auto'>{item.name}</span>
+            </li>
+          ): null
+        }
       </ul>
     </div>					
   )

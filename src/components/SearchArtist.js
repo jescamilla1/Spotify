@@ -13,14 +13,15 @@ function SearchArtist() {
     
     const searchArtists = async (e) => {
         setToken(window.localStorage.getItem("token"))
+
         e.preventDefault()
-        const {data} = await axios.get( SEARCH_ENDPOINT,{
+        const {data} = await axios.get( SEARCH_ENDPOINT, {
             headers:{
-            Authorization: `Bearer ${token}`
+              Authorization: `Bearer ${token}`
             },
             params: {
-            q: searchKey,
-            type: "artist"
+              q: searchKey,
+              type: "artist"
             }
         })
         // console.log(data)
@@ -30,7 +31,15 @@ function SearchArtist() {
     const renderArtists = () => {
     return artists.map(artist => (
         <div className='search-artist-container' key={artist.id}>
-          {artist.images.length ? <img className="search-artist-image" width={"100%"} src={artist.images[0].url} alt =""/> : <div>No Image</div>}
+          
+          {
+            artist.images.length ? 
+
+            <img className="search-artist-image" width={"100%"} src={artist.images[0].url} alt =""/> : 
+            <div>No Image</div>
+          
+          }
+          
           <div className='search-artist-name'>
             {artist.name}
           </div>
