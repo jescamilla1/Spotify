@@ -32,6 +32,7 @@ function Login() {
       // Logout by romoving token
       setToken("")
       window.localStorage.removeItem("token")
+      window.location.reload(false) // to refresh the page to empty
     }
   
   return (

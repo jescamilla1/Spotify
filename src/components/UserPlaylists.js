@@ -6,10 +6,11 @@ import axios from 'axios'
 
 function UserPlaylists() {
   const PLAYLISTS_ENDPOINT = "https://api.spotify.com/v1/me/playlists"
-  
+
   const [token, setToken] = useState("")
   const [data, setData] = useState({})
   const [activeId, setActiveId] = useState('')
+
 
   useEffect(() => {
 
