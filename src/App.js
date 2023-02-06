@@ -30,7 +30,9 @@ function App() {
               </div>
             </div>
             :
-            <p>hello world</p>
+            <div className='h-screen flex'>
+              <h1 className='text-3xl'>Please Login to use Spotify Playlist Editor</h1>
+            </div>
           } 
         </div>
           
