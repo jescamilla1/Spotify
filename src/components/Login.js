@@ -10,7 +10,7 @@ function Login() {
     // Token received from authorization request to Spotify APi
     const [token, setToken] = useState("")
 
-  
+    
     useEffect(() => {
       // Get the auth token on load
       const hash = window.location.hash

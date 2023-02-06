@@ -7,7 +7,9 @@ function PlaylistTracks() {
   const [tracks, setTracks] = useState({})
 
   // TODO: split the useffect into one that gets the token and has a token parameter adnd another that constantly checks
-
+  useEffect(() => {
+    setToken(window.localStorage.getItem("token"))
+  })
 
   useEffect(()=>{
     // to display the current playlist checked
