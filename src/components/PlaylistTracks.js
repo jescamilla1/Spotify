@@ -8,6 +8,10 @@ function PlaylistTracks() {
 
   // TODO: split the useffect into one that gets the token and has a token parameter adnd another that constantly checks
 
+function PlaylistTracks(props) {
+//   const PLAYLISTS_ENDPOINT = "https://api.spotify.com/v1/playlists/" + props.PLAYLIST_ID + '/tracks' 
+  const [tracks, setTracks] = useState([])
+  const [token, setToken] = useState("")
 
   useEffect(()=>{
     const test_id = localStorage.getItem("playlist_id")
@@ -22,12 +26,13 @@ function PlaylistTracks() {
       // console.log(data)
       setTracks(data)
     }
+  },[])
 
     setToken(window.localStorage.getItem("token"))
     getTracks()
   })
-  
-    
+
+
   return (
     <div className='overflow-auto max-h-screen'>
       {tracks?.items ? tracks.items.map((item)=>
