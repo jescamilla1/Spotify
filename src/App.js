@@ -18,16 +18,13 @@ function App() {
         <Header/>
         <div>
           { token ?
-            <div className='playlist-editor-container max-h-min'>
-              <div className='left-playlist-container'>
+            <div>
                 <UserPlaylists/>
-              </div>
+                <UserPlaylists/>
               <div className='tracks-container mt-0'>
                 <PlaylistTracks/>
               </div>
-              <div className='right-playlist-container'>
-                <UserPlaylists/>
-              </div>
+                
             </div>
             :
             <div className='h-screen flex'>

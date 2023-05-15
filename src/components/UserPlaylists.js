@@ -37,24 +37,20 @@ function UserPlaylists() {
   
   return (
     
-    <div className='playlist-list-container overflow-auto'>
-      <ul className='flex flex-col'>
+    <div>
+      <select className='select-playlist'>
         {
           data?.items?data.items.map((item)=> 
-            <li onClick={ () => {
+            <option onClick={ () => {
                   setActiveId(item.id); 
                   window.localStorage.setItem("playlist_id", item.id)
                 }} 
-
-                className={ `playlist-list ${ item.id === activeId ? 'bg-[#1db954]' : null}`  } 
-                key={item.id} >
-                
-                <img className='playlist-album-img' src={item.images[0].url}></img>
-                <span className='my-auto'>{item.name}</span>
-            </li>
+            value={item.id} >
+            {item.name}    
+            </option>
           ): null
         }
-      </ul>
+      </select>
     </div>					
   )
   

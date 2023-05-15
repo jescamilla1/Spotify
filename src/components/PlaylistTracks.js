@@ -38,8 +38,7 @@ function PlaylistTracks() {
       {
         tracks?.items?tracks.items.map(( item )=>
           <li draggable className='playlist-list' key = {item.track.name}>
-              <img className='w-9 h-full' src={item.track.album.images[0].url}></img>
-              
+              <img className='w-9 h-full' src={item.track.album.images[0].url}></img> 
               <span className='my-auto'> {item.track.name} </span>
           </li>
         ): null

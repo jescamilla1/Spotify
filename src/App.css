@@ -7,8 +7,9 @@
 @layer components{
 
     .App{
-        @apply flex flex-col bg-[#191414] h-fit text-white font-['Gotham_Black'] items-center
+        @apply flex flex-col bg-[#191414] h-max text-white font-['Gotham_Black'] items-center
     }
+    /* Header Styles */
     .header-container{
         @apply flex items-center gap-x-3 justify-center pb-11 pt-5 min-w-max h-fit
     }
@@ -21,32 +22,23 @@
     .spotify-button{
         @apply bg-[#1db954] hover:bg-[#15843c] py-2 px-4 rounded-full ml-8 text-sm
     }
-    .playlist-container{
-        @apply w-64 
-    }
-    .playlist-list-container{
-        @apply overflow-y-auto   align-middle
-    }
-    .playlist-list-items{
-        @apply space-y-2
-    }
-    .playlist-editor-container{
-        @apply flex flex-row bg-[#1db954] h-1/2 max-h-96 w-1/2 text-white min-w-fit
-    }
-    .left-playlist-container{
-        @apply  h-screen bg-[#2a2a2a] w-64 ml-0 
-    }
+
+  
+
+  
     .tracks-container{
-        @apply w-auto bg-[#2a2a2a]  h-full m-auto 
-    }
-    .right-playlist-container{
-        @apply h-screen bg-[#2a2a2a] w-64 mr-0 
+        @apply w-auto bg-[#2a2a2a]  m-auto 
     }
 
+    /* Playlist Styles */
     .playlist-list{
         @apply flex flex-row gap-4 border border-none   text-white font-['Gotham'] font-medium hover:bg-[#1db954] py-1 px-4 
     }
     .playlist-album-img{
         @apply h-full w-10
+    }
+    /* Dropdown Menu styles */
+    .select-playlist{
+        @apply  bg-[#2a2a2a] 
     }
 }
